@@ -15,14 +15,18 @@
 | 会话4 复盘 | 用 Chrome 运营账号读后台数据，做逐条诊断＋对标/参考/情报三项对照 |
 | 会话5 情报 | 抖音规则/功能/案例情报，每条带来源链接，顶部给总体分析与建议 |
 
-## 安装（同事只需三步）
+## 安装（把一句指令发给 DSH 即可）
 
-1. 从 GitHub 下载本仓库 ZIP 并解压。
-2. 右键 `install.ps1` →「使用 PowerShell 运行」；或：
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File .\install.ps1
-   ```
-3. 按提示完成浏览器登录，然后打开 `tutorial.html` 按教程创建 5 个工作聊天。
+新开一个 DSH 聊天，把下面整段复制发给它：
+
+```text
+请帮我安装「抖音五模块工作台」：
+1. 从 GitHub 公开仓库 https://github.com/dadiaoliyaqiao-max/douyin-workbench 克隆到 D:\DouyinWorkbench；如果目录已存在，先备份 data、batches、research、reviews、scripts-output 再更新。
+2. 运行 install.ps1（PowerShell，自动检测 DSH / Edge / Chrome / Node / Python，装好两个浏览器扩展，并把桥接服务设为开机启动）。
+3. 安装完成后检查 Edge 8788 和 Chrome 8787 两个桥接是否连通，告诉我两个桌面快捷方式怎么登录。
+4. 再引导我在 DSH 新建 5 个工作聊天并运行 configure-sessions.ps1 绑定会话。
+5. 不要读取或上传任何密码、Cookie；缺 DSH / Node / Python 时停下告诉我缺什么。
+```
 
 安装脚本会自动：
 - 检测 Windows / DSH / Edge / Chrome / Node / Python；
@@ -32,6 +36,8 @@
 - 初始化空的对标账号库与业务档案；
 - 注册 DSH 五模块侧栏插件（默认关闭，可在 `configure-sessions.ps1` 绑定会话后启用）。
 
+> 如果 DSH 不能执行命令，才需要从 Releases 下载 ZIP 手动解压并右键运行 `install.ps1`。
+
 ## 安装后
 
 - **Edge 研究浏览器**：登录抖音**研究小号**，用于会话1/2/5。
@@ -39,7 +45,7 @@
 - 在 DSH 新建 6 个聊天（总管 + 5 个模块），把 `会话说明/` 里的启动语分别发给对应聊天。
 - **对标账号由用户自己提供**：直接发账号名称/抖音号/主页链接给会话1；安装包不预置任何账号。
 
-详细图文流程、规则速查、命令、FAQ 全在 **[tutorial.html](tutorial.html)**（可离线直接发给同事）。
+极简使用说明（带按钮截图）见 **[tutorial.html](tutorial.html)**；完整安装/命令/FAQ 存档在 `docs/详细安装手册.html`。
 
 ## 目录
 
