@@ -379,7 +379,7 @@ window.__ModuleLoader__.load({
     .dsdash-history{margin:16px auto 0;width:min(1120px,100%);background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:10px 14px;font-size:12.5px}
     .dsdash-accounts .dsdash-account{cursor:pointer}.dsdash-accounts .dsdash-account:hover{border-color:#9fb0cc;box-shadow:0 6px 18px rgba(24,34,52,.12)}.dsdash-account-detail{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:18px;align-items:start;background:#fff;border:1px solid #e3e9f2;border-radius:12px;padding:14px}.dsdash-account-shot{width:100%;max-height:540px;object-fit:contain;background:#eef2f8;border-radius:10px;border:1px solid #e3e9f2}.dsdash-account-info h4{margin:12px 0 6px}.dsdash-account-videos{margin:0;padding-left:18px;display:grid;gap:6px;font-size:12.5px;max-height:420px;overflow:auto}.dsdash-account-videos a{color:#3266be}
     .dsdash-account-analysis{grid-column:1/-1;background:#f7f9fc;border:1px solid #e3e9f2;border-radius:10px;padding:12px 14px;font-size:12.8px;line-height:1.6;max-height:320px;overflow:auto}.dsdash-account-analysis h3,.dsdash-account-analysis h4{margin:8px 0 4px;font-size:13.5px}.dsdash-account-analysis p{margin:6px 0}.dsdash-account-analysis ul{margin:4px 0;padding-left:18px}.dsdash-account-analysis table{border-collapse:collapse;font-size:12px}.dsdash-account-analysis th,.dsdash-account-analysis td{border:1px solid #dfe6f0;padding:3px 6px}
-    .dsdash-dive-overlay{z-index:1300}.dsdash-dive-panel{width:min(1000px,94vw);height:90vh}.dsdash-dive-checks{margin:10px 0;padding:10px 12px;background:#f7f9fc;border:1px solid #e3e9f2;border-radius:8px;font-size:12.5px}.dsdash-dive-checks h4{margin:0 0 6px;font-size:13px}.dsdash-dive-checks ul{margin:0;padding-left:18px}.dsdash-dive-limits{margin:8px 0;padding-left:18px;font-size:12px;color:#6b7789}.dsdash-dive-transcript{margin:10px 0;padding:12px;background:#fff;border:1px solid #e3e9f2;border-radius:8px;max-height:340px;overflow:auto}.dsdash-dive-transcript h4{margin:0 0 8px;font-size:13px}.dsdash-transcript-primary{max-height:none;overflow:visible;border-color:#bfdbfe;background:#f8fbff}.dsdash-transcript-primary h4{font-size:14px;color:#1e40af}.dsdash-dived{background:#e8f5ec;border-color:#9fd3ad;color:#1d6b34}.dsdash-dived:hover{background:#ddf0e3}
+    .dsdash-dive-overlay{z-index:1300}.dsdash-dive-panel{width:min(1000px,94vw);height:90vh}.dsdash-dive-checks{margin:10px 0;padding:10px 12px;background:#f7f9fc;border:1px solid #e3e9f2;border-radius:8px;font-size:12.5px}.dsdash-dive-checks h4{margin:0 0 6px;font-size:13px}.dsdash-dive-checks ul{margin:0;padding-left:18px}.dsdash-dive-limits{margin:8px 0;padding-left:18px;font-size:12px;color:#6b7789}.dsdash-dive-transcript{margin:10px 0;padding:12px;background:#fff;border:1px solid #e3e9f2;border-radius:8px;max-height:340px;overflow:auto}.dsdash-dive-transcript h4{margin:0 0 8px;font-size:13px}.dsdash-transcript-primary{max-height:none;overflow:visible;border-color:#bfdbfe;background:#f8fbff}.dsdash-transcript-primary h4{font-size:14px;color:#1e40af}.dsdash-dive-card{margin:10px 0;padding:12px 14px;background:#fff;border:1px solid #e3e9f2;border-radius:8px;max-height:none;overflow:visible}.dsdash-dive-card h4{margin:0 0 8px;font-size:13.5px}.dsdash-dive-images{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 12px}.dsdash-dive-images figure{margin:0}.dsdash-dive-images img{width:100%;height:auto;max-height:240px;object-fit:contain;background:#f4f7fb;border:1px solid #e3e9f2;border-radius:8px}.dsdash-dive-images figcaption{font-size:11px;color:#6b7789;text-align:center;margin-top:4px}.dsdash-dive-figure{margin:12px 0}.dsdash-dive-figure img{width:100%;height:auto;display:block;border:1px solid #e3e9f2;border-radius:8px;background:#f4f7fb}.dsdash-dive-figure figcaption{font-size:11.5px;color:#6b7789;text-align:center;margin-top:4px}.dsdash-dived{background:#e8f5ec;border-color:#9fd3ad;color:#1d6b34}.dsdash-dived:hover{background:#ddf0e3}
     .dsdash-transcript{background:#fff;border:1px solid #e3e9f2;border-radius:10px;padding:10px 14px;margin:10px 0}.dsdash-transcript summary{cursor:pointer;font-weight:600;font-size:13.5px}.dsdash-transcript-body{margin-top:10px;max-height:420px;overflow:auto;border-top:1px solid #eef2f8;padding-top:10px}.dsdash-transcript-reviewed{margin-top:10px;border-top:1px dashed #dbe3ee;padding-top:8px}.dsdash-transcript-reviewed summary{cursor:pointer;font-weight:600;font-size:12.5px}
     .dsdash-script-panel{width:min(720px,92vw);height:auto;max-height:86vh}.dsdash-script-label{display:block;font-size:13px;font-weight:600;margin:10px 0 6px}.dsdash-script-input{width:100%;font:13px/1.6 ui-monospace,Consolas,monospace;padding:10px;border:1px solid #cbd2dc;border-radius:8px;resize:vertical;background:#fff;color:inherit}.dsdash-dialog-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap}.dsdash-deck-actions{display:flex;justify-content:center;margin:4px 0 18px}.dsdash-deck-actions button.dsdash-write-button{background:#2563eb;border-color:#2563eb;color:#fff}.dsdash-deck-actions button.dsdash-write-button:hover:not(:disabled){background:#1d4ed8 !important;border-color:#1d4ed8 !important;color:#fff !important}.dsdash-script-panel .dsdash-dialog-actions button.dsdash-write-button{background:#2563eb;border-color:#2563eb;color:#fff}.dsdash-script-panel .dsdash-dialog-actions button.dsdash-write-button:hover:not(:disabled){background:#1d4ed8 !important;border-color:#1d4ed8 !important;color:#fff !important}.dsdash-script-panel .dsdash-dialog-actions button.dsdash-write-button:disabled{background:#9aa8bd;border-color:#9aa8bd;color:#fff;cursor:not-allowed}
     @keyframes dsdash-fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}.dsdash-slide{animation:dsdash-fade .22s ease}
@@ -644,20 +644,27 @@ window.__ModuleLoader__.load({
         h('div', { className: 'dsdash-dialog-body' },
           detail.loading ? notice('正在读取拆解内容…') : detail.error ? notice(detail.error, 'error') : h(React.Fragment, null,
             data?.transcript ? h('p', { className: 'dsdash-muted' }, `逐字稿：${data.transcript.mode || '模式未记录'}；${data.transcript.returnType || '类型未记录'}；${data.transcript.claimsWatched ? '豆包声明看过视频' : '未声明看过视频'}`) : notice('该拆解未记录豆包逐字稿元数据。'),
-            data?.transcriptRaw ? h('div', { className: 'dsdash-dive-transcript dsdash-transcript-primary' },
-              h('h4', null, `豆包逐字稿原文（完整，未摘要 · ${data.transcriptRaw.length} 字）`),
-              h('p', { className: 'dsdash-muted' }, '豆包原样输出，未经摘要/改写；AI辅助提取，未经真人审核。也是原创剧本的参考依据。'),
-              h(Markdown, { value: data.transcriptRaw })) : notice('该拆解没有 doubao-copy-raw.md 原文，只有修订稿/卡片；不能当原文使用。'),
-            data?.transcriptReviewed ? h('details', { className: 'dsdash-transcript-reviewed' },
-              h('summary', null, `豆包逐字稿修订稿（${data.transcriptReviewed.length} 字，AI整理，含校正/比对说明）`),
-              h(Markdown, { value: data.transcriptReviewed })) : null,
             checks.length || data?.deepCheck ? h('div', { className: 'dsdash-dive-checks' },
               h('h4', null, `自查：${data?.deepCheck?.passed === true ? '通过' : data?.deepCheck?.passed === false ? '未通过' : '未记录'}`),
               checks.length ? h('ul', null, ...checks.map(([name, value]) => h('li', { key: name }, `${name}: ${value === true ? '通过' : String(value)}`))) : null) : null,
             data?.transcript?.limitations?.length ? h('ul', { className: 'dsdash-dive-limits' }, ...data.transcript.limitations.map((line, index) => h('li', { key: index }, line))) : null,
-            data?.cardMarkdown ? h('details', { className: 'dsdash-transcript-reviewed' },
-              h('summary', null, '拆解卡片（结构 / 证据，辅助阅读）'),
-              h(Markdown, { value: data.cardMarkdown })) : null))));
+            data?.cardMarkdown ? h('div', { className: 'dsdash-dive-card' },
+              h('h4', null, '拆解卡片（结构 / 证据）'),
+              array(data.cardBlocks).length
+                ? data.cardBlocks.map((block, index) => block.type === 'image'
+                  ? h('figure', { key: index, className: 'dsdash-dive-figure' },
+                    h('img', { src: block.url, alt: block.label, loading: 'lazy', decoding: 'async' }),
+                    h('figcaption', null, block.label))
+                  : h(Markdown, { key: index, value: block.value }))
+                : h(React.Fragment, null,
+                  array(data.cardImages).length ? h('div', { className: 'dsdash-dive-images' }, ...data.cardImages.map(image => h('figure', { key: image.url },
+                    h('img', { src: image.url, alt: image.label, loading: 'lazy', decoding: 'async' }),
+                    h('figcaption', null, image.label)))) : null,
+                  h(Markdown, { value: data.cardMarkdownClean || data.cardMarkdown }))) : null,
+            data?.transcriptRaw ? h('div', { className: 'dsdash-dive-transcript dsdash-transcript-primary' },
+              h('h4', null, `豆包逐字稿原文（完整，未摘要 · ${data.transcriptRaw.length} 字）`),
+              h('p', { className: 'dsdash-muted' }, '豆包原样输出，未经摘要/改写；AI辅助提取，未经真人审核。也是原创剧本的参考依据。'),
+              h(Markdown, { value: data.transcriptRaw })) : notice('该拆解没有 doubao-copy-raw.md 原文，只有修订稿/卡片；不能当原文使用。')))));
     }
     
     function TranscriptLibrary({ report }) {
@@ -666,14 +673,11 @@ window.__ModuleLoader__.load({
       return h('section', { className: 'dsdash-library' },
         h('div', { className: 'dsdash-library-head' }, h('div', null,
           h('h3', null, `已拆解逐字稿 · ${transcripts.length} 条`),
-          h('p', { className: 'dsdash-muted' }, '豆包【新工作任务】→【工作】模式提取；原始输出全文完整展示，修订稿另列，均标“AI辅助，未经真人审核”。'))),
+          h('p', { className: 'dsdash-muted' }, '豆包【新工作任务】→【工作】模式提取；只保留原始逐字稿全文（AI辅助，未经真人审核）。'))),
         ...transcripts.map(item => h('details', { className: 'dsdash-transcript', key: item.videoId },
-          h('summary', null, `${item.code || item.videoId}｜${item.title || '拆解视频'}${item.revision !== null ? ` · revision-${item.revision}` : ''} · 原始逐字稿 ${(item.raw || '').length} 字`),
+          h('summary', null, `${item.code || item.videoId}｜${item.title || '拆解视频'}${item.revision !== null ? ` · revision-${item.revision}` : ''} · 逐字稿原文 ${(item.raw || '').length} 字`),
           h('div', { className: 'dsdash-transcript-body' },
-            item.raw ? h(React.Fragment, null, h('h4', null, '原始逐字稿（豆包输出全文，AI辅助未经真人审核）'), h(Markdown, { value: item.raw })) : notice('该拆解没有 doubao-copy-raw.md，仅存修订稿。'),
-            item.reviewed ? h('details', { className: 'dsdash-transcript-reviewed' },
-              h('summary', null, `修订稿（${item.reviewed.length} 字，AI辅助整理）`),
-              h(Markdown, { value: item.reviewed })) : null))));
+            item.raw ? h(Markdown, { value: item.raw }) : notice('该拆解没有 doubao-copy-raw.md 原文，不能当原文使用。')))));
     }
     
     function ScriptPromptDialog({ prompt, busy, diveSubmitted, onClose, onChange, onDive, onSubmit }) {
@@ -940,7 +944,9 @@ window.__ModuleLoader__.load({
           view === 'raw' ? h(Markdown, { value: report.markdown }) :
             h(React.Fragment, null,
               report.key === 'session3' ? h(ScriptDeck, { report: deckReport, onAdjust: () => setAdjustPrompt({ text: '' }) }) : h(Deck, { report: deckReport,
-                filterHeading: report.key === 'session1' ? /^3(?:\.\s|\.\d|\s|$)/ : undefined,
+                filterHeading: report.key === 'session1' ? /^3(?:\.\s|\.\d|\s|$)/
+                  : report.key === 'session2' ? /已拆解视频完整逐字稿|^(?:[BHC]|S)\d+｜/
+                    : undefined,
                 afterHeading: report.key === 'session1' ? /^2\./ : undefined,
                 afterSlide: report.key === 'session1' ? h(AccountLibrary, { report }) : null }),
               report.key === 'session2' ? h(VideoLibrary, { report, videoStates, deepStates, onCreate: prepareScript, onDive: deepDive, onViewDive: openDive, disabled: saving, openSession, confirmLeave }) : null,

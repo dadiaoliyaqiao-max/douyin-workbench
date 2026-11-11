@@ -583,10 +583,70 @@ export class ReportStore {
     }
     const transcriptMarkdown = transcriptRaw || transcriptReviewed;
     const transcriptSource = transcriptRaw ? 'doubao-copy-raw.md' : transcriptReviewed ? 'doubao-copy-reviewed.md' : '';
+    // Resolve screenshots referenced by card.md, keeping text and images in document order.
+    const cardImages = [];
+    const cardBlocks = [];
+    let cardMarkdownClean = card.markdown;
+    let cursor = 0;
+    const seen = new Set();
+    const resolveImage = async (label, ref) => {
+      if (!ref || /^[a-z][a-z0-9+.-]*:/i.test(ref)) return null;
+      const resolved = path.posix.normalize(path.posix.join(base, ref));
+      if (!resolved.startsWith(`${directory}/`) || !/\.(?:png|jpe?g|webp)$/i.test(resolved)) return null;
+      const relative = resolved.slice(directory.length + 1);
+      if (seen.has(relative)) return null;
+      try { await this.#existing(`${directory}/${relative}`); } catch { return null; }
+      seen.add(relative);
+      const image = { label: label || '视频截图', path: relative, url: `/api/douyin-asset?reportId=${encodeURIComponent(reportId)}&path=${encodeURIComponent(relative)}` };
+      cardImages.push(image);
+      return image;
+    };
+    const imagePattern = /!\[([^\]\n]{0,80})\]\(<?([^)\s>]+)>?\)/g;
+    for (const match of card.markdown.matchAll(imagePattern)) {
+      if (cardImages.length >= 12) break;
+      const before = card.markdown.slice(cursor, match.index);
+      if (before.trim()) cardBlocks.push({ type: 'markdown', value: before.replace(/^\n+|\n+$/g, '') });
+      const image = await resolveImage(text(match[1]).trim(), text(match[2]).trim());
+      if (image) cardBlocks.push({ type: 'image', ...image });
+      cursor = match.index + match[0].length;
+    }
+    const tail = card.markdown.slice(cursor);
+    if (tail.trim()) cardBlocks.push({ type: 'markdown', value: tail.replace(/^\n+|\n+$/g, '') });
+    cardMarkdownClean = card.markdown.replace(imagePattern, '').replace(/\n{3,}/g, '\n\n').trim();
+    // Some cards predate inline screenshots (or only carry the cover): add the revision/video image folders.
+    if (cardImages.length < 3) {
+      const collected = [];
+      const collect = async (relativeDir, depth) => {
+        let entries;
+        try { entries = await fs.readdir(await this.#existing(relativeDir), { withFileTypes: true }); } catch { return; }
+        for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+          if (collected.length >= 6 || entry.isSymbolicLink()) continue;
+          const childRel = `${relativeDir}/${entry.name}`;
+          if (entry.isDirectory()) { if (depth > 0) await collect(childRel, depth - 1); continue; }
+          if (!/\.(?:png|jpe?g|webp)$/i.test(entry.name)) continue;
+          const relative = childRel.slice(directory.length + 1);
+          try { const stat = await fs.lstat(await this.#existing(childRel)); if (!stat.isFile() || stat.size > MAX_COVER_BYTES) continue; } catch { continue; }
+          collected.push({ label: entry.name.replace(/\.(?:png|jpe?g|webp)$/i, ''), path: relative, url: `/api/douyin-asset?reportId=${encodeURIComponent(reportId)}&path=${encodeURIComponent(relative)}` });
+        }
+      };
+      const videoRoot = `${directory}/deep-dives/${videoId}`;
+      await collect(`${videoRoot}/sheets`, 1);
+      await collect(`${base}/sheets`, 0);
+      await collect(`${videoRoot}/assets`, 2);
+      await collect(`${base}/assets`, 2);
+      await collect(base, 0);
+      const existing = new Set(cardImages.map(image => image.path));
+      const extra = collected.filter(image => !existing.has(image.path)).slice(0, Math.max(0, 6 - cardImages.length));
+      cardImages.push(...extra);
+      for (const image of extra) cardBlocks.push({ type: 'image', ...image });
+    }
     return {
       videoId,
       revision,
       cardMarkdown: card.markdown,
+      cardMarkdownClean,
+      cardBlocks,
+      cardImages,
       transcriptMarkdown,
       transcriptSource,
       transcriptRaw,
