@@ -1,0 +1,16 @@
+# 运行数据与个人配置（不要提交到 Git）
+browser-profiles/
+logs/
+control/
+batches/
+research/
+research-output/
+reviews/
+scripts-output/
+handoffs/
+config/runtime.json
+config/session-dispatch-v3.json
+data/business_profile.json
+data/benchmarks.json
+*.log
+*.tmp

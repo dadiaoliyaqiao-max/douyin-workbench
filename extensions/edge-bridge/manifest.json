@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "DSH Edge Bridge",
+  "version": "1.0.0",
+  "description": "Local relay that lets the DSH agent drive this Edge browser via chrome.debugger (read-only by default).",
+  "permissions": [
+    "debugger",
+    "tabs",
+    "scripting",
+    "alarms",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:8788/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "DSH Edge Bridge"
+  }
+}

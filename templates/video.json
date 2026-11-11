@@ -1,0 +1,40 @@
+{
+  "is_template": true,
+  "video_id": null,
+  "url": null,
+  "account_id": null,
+  "account_name": null,
+  "category": null,
+  "industry": null,
+  "title": null,
+  "published_at": null,
+  "collected_at": null,
+  "comments": null,
+  "likes": null,
+  "metric_display": {"comments_raw": null, "likes_raw": null, "precision": null},
+  "comment_review": {
+    "status": "pending",
+    "sample_size": null,
+    "low_information_count": null,
+    "sampling_method": null,
+    "high_like_relative_to_candidates": null,
+    "high_like_basis": null,
+    "sampled_at": null,
+    "reason": null,
+    "evidence_ids": []
+  },
+  "source_evidence": [],
+  "materials": {
+    "script": {"status": "unknown", "content": null, "method": null, "reason": null},
+    "caption": {"status": "unknown", "content": null, "method": null, "reason": null},
+    "cover": {"status": "unknown", "reference": null, "text": null, "visual_analysis": null, "reason": null},
+    "bgm": {"status": "unknown", "name": null, "artist": null, "url": null, "reason": null}
+  },
+  "analysis": {
+    "hook": null,
+    "interaction_driver": null,
+    "adaptation": null,
+    "do_not_copy": null,
+    "risks": null
+  }
+}

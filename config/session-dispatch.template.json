@@ -1,0 +1,55 @@
+﻿{
+  "schema_version": 1,
+  "status": "five_targets_configured",
+  "startup_probe": false,
+  "workspace": "{{INSTALL_DIR}}",
+  "controller_session_id": "{{CONTROLLER_SESSION_ID}}",
+  "approval": {
+    "approved_by": "user",
+    "approved_at": "{{CONFIGURED_AT}}",
+    "scope": "本机五会话调度，不含发布、私信、关注、投流、支付或读取凭据",
+    "quote": "安装配置向导确认"
+  },
+  "extension_approval": {
+    "approved_by": "user",
+    "approved_on": "{{CONFIGURED_AT}}",
+    "quote": "安装配置向导确认",
+    "session_id": "{{SESSION5_ID}}",
+    "scope": "新增第五条会话，同工作区、queue、终态回执；无创建/广播/凭据权限"
+  },
+  "targets": {
+    "session1": {
+      "session_id": "{{SESSION1_ID}}",
+      "role": "对标账号",
+      "verified": true
+    },
+    "session2": {
+      "session_id": "{{SESSION2_ID}}",
+      "role": "参考视频",
+      "verified": true
+    },
+    "session3": {
+      "session_id": "{{SESSION3_ID}}",
+      "role": "原创剧本",
+      "verified": true
+    },
+    "session4": {
+      "session_id": "{{SESSION4_ID}}",
+      "role": "自有账号复盘",
+      "verified": true
+    },
+    "session5": {
+      "session_id": "{{SESSION5_ID}}",
+      "role": "抖音规则与增长情报",
+      "verified": true
+    }
+  },
+  "delivery_mode": "followup",
+  "wire_mode": "queue",
+  "allow_broadcast": false,
+  "allow_create_or_fork": false,
+  "allow_steer_or_cancel": false,
+  "require_same_workspace": true,
+  "allow_credentials_access": false,
+  "notes": "由 configure-sessions.ps1 生成；五模块工作台仅在这个工作区的总管聊天显示。"
+}

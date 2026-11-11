@@ -1,0 +1,15 @@
+﻿{
+  "schema_version": 1,
+  "status": "awaiting_user_input",
+  "updated_at": null,
+  "business_segment": "",
+  "service_region": "",
+  "primary_goal": "",
+  "target_customers": "",
+  "differentiators": [],
+  "on_camera_resources": null,
+  "production_constraints": null,
+  "owned_account_urls": [],
+  "user_supplied_benchmarks": [],
+  "notes": "请把本文件交给会话1（对标账号）；由用户提供细分、城市、目标和对标账号名称/主页链接。不要填写密码、验证码或 Cookie。"
+}

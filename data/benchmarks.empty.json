@@ -1,0 +1,7 @@
+﻿{
+  "schema_version": 1,
+  "status": "awaiting_user_input",
+  "updated_at": null,
+  "accounts": [],
+  "note": "对标账号由用户自己提供。把名称/主页链接发给会话1，或在本文件 accounts 中填写；不要自动猜测或把候选当成已确认。"
+}

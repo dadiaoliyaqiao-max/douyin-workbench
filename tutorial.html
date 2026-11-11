@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>抖音五模块工作台 · 安装与使用教程</title>
+<style>
+  :root{
+    --blue:#2563eb; --blue-dark:#1d4ed8; --ink:#1b2432; --muted:#66748a;
+    --line:#e3e9f2; --bg:#f5f7fb; --card:#ffffff; --teal:#0f766e; --amber:#b45309; --red:#b91c1c;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+  header.hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#0ea5e9 100%);color:#fff;padding:46px 20px 40px;margin-bottom:26px}
+  .hero-inner{max-width:1040px;margin:0 auto}
+  .hero h1{margin:0 0 10px;font-size:30px;line-height:1.3}
+  .hero p{margin:6px 0;color:#dbeafe;max-width:820px}
+  .hero .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:999px;font-size:12.5px;margin-bottom:14px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .flow span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:8px;font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:0 4px 14px rgba(24,34,52,.04)}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card p{margin:4px 0;color:var(--muted);font-size:13.5px}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:26px;columns:2;column-gap:30px}
+  .toc a{display:block;padding:3px 0;font-size:14px;color:#334155}
+  @media(max-width:720px){.toc{columns:1}}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:0 0 20px}
+  section h2{margin:0 0 12px;font-size:21px;color:#0f172a;border-left:5px solid var(--blue);padding-left:12px}
+  section h3{margin:20px 0 8px;font-size:16.5px}
+  p{margin:7px 0}
+  ul,ol{margin:7px 0;padding-left:22px}
+  li{margin:3px 0}
+  code{background:#eef2f8;border:1px solid #e2e8f2;border-radius:5px;padding:1px 5px;font:13px ui-monospace,Consolas,monospace}
+  pre{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:14px 16px;overflow:auto;font:13px/1.6 ui-monospace,Consolas,monospace}
+  pre code{background:none;border:none;padding:0;color:inherit}
+  .steps{counter-reset:step;list-style:none;padding:0;margin:10px 0}
+  .steps li{counter-increment:step;position:relative;padding:10px 0 10px 44px;border-bottom:1px dashed var(--line)}
+  .steps li:last-child{border-bottom:none}
+  .steps li:before{content:counter(step);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:#f1f5fb;color:#334155}
+  .tip,.warn,.good,.danger{border-radius:10px;padding:10px 14px;margin:10px 0;font-size:13.5px}
+  .tip{background:#eff6ff;border:1px solid #bfdbfe}
+  .warn{background:#fffbeb;border:1px solid #fde68a}
+  .good{background:#ecfdf5;border:1px solid #a7f3d0}
+  .danger{background:#fef2f2;border:1px solid #fecaca}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:#e8eefb;color:#1e40af;margin-right:6px}
+  .files{font-size:13px;color:var(--muted)}
+  details{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
+  details summary{cursor:pointer;font-weight:600}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;padding:20px 0}
+  @media print{body{background:#fff}header.hero{background:#1e3a8a !important;-webkit-print-color-adjust:exact}section{break-inside:avoid;box-shadow:none}.toc{display:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">Windows · DSH 桌面版 · Edge + Chrome</span>
+    <h1>抖音五模块工作台 · 安装与使用教程</h1>
+    <p>一套可复制给同事的家居家装抖音运营工作流：<b>对标账号 → 参考视频 → 原创剧本 → 自有账号复盘 → 平台情报</b>，五条链路共享规则、文件与浏览器自动化。</p>
+    <div class="flow">
+      <span>① 会话1 对标账号</span><span>② 会话2 参考视频</span><span>③ 会话3 原创剧本</span><span>④ 会话4 复盘</span><span>⑤ 会话5 情报</span><span>＋ 总管协调</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc">
+    <a href="#prepare">1. 安装前准备</a>
+    <a href="#install">2. 安装（一键脚本）</a>
+    <a href="#login">3. 两个浏览器与登录</a>
+    <a href="#chats">4. 创建 5 个工作聊天</a>
+    <a href="#bench">5. 给出你的对标账号</a>
+    <a href="#daily">6. 每天怎么用</a>
+    <a href="#modules">7. 五模块详解</a>
+    <a href="#rules">8. 核心规则速查</a>
+    <a href="#commands">9. 快捷命令</a>
+    <a href="#faq">10. 常见问题</a>
+    <a href="#privacy">11. 隐私与安全</a>
+    <a href="#structure">12. 目录结构</a>
+    <a href="#advanced">13. 进阶：五模块工作台</a>
+    <a href="#upgrade">14. 升级与卸载</a>
+  </nav>
+
+  <section id="prepare">
+    <h2>1. 安装前准备</h2>
+    <table>
+      <tr><th style="width:26%">需要</th><th>说明</th></tr>
+      <tr><td>Windows 10 / 11（64 位）</td><td>当前发布包只支持 Windows。</td></tr>
+      <tr><td><b>DSH 桌面版（DeepSeek Harness）</b></td><td>同事之间使用的 AI 工作台。请先安装、至少启动一次。本项目的规则、会话和侧栏插件都跑在 DSH 里。</td></tr>
+      <tr><td>Microsoft Edge</td><td>研究浏览器：登录抖音<b>研究小号</b>，供会话1/2/5 使用。</td></tr>
+      <tr><td>Google Chrome</td><td>运营浏览器：登录<b>运营账号</b>，供会话4 复盘使用。</td></tr>
+      <tr><td>能上网</td><td>抖音、豆包、GitHub（可选）等。</td></tr>
+    </table>
+    <div class="tip">安装脚本会自动使用 DSH 自带的 Node.js 和 Python，不需要你单独配置环境；如果 DSH 没装，脚本会提示先安装。</div>
+    <div class="warn">浏览器登录必须由你本人扫码/输密码完成。本项目不会、也不能替你保存抖音密码或 Cookie。</div>
+  </section>
+
+  <section id="install">
+    <h2>2. 安装（一键脚本）</h2>
+    <ol class="steps">
+      <li><b>下载发布包</b>：从 GitHub 下载 ZIP，解压到一个普通目录，例如 <code>D:\DouyinWorkbench-install</code>。</li>
+      <li><b>运行安装</b>：在解压目录右键 <code>install.ps1</code> →「使用 PowerShell 运行」。<br>
+        若没有该菜单，打开 PowerShell 进入目录执行：
+        <pre><code>powershell -ExecutionPolicy Bypass -File .\install.ps1</code></pre>
+      </li>
+      <li><b>阅读检测结果</b>：脚本会逐项检测 Windows、DSH、Edge、Chrome、Node、Python，并显示 <code>[OK]</code> / <code>[!]</code>。</li>
+      <li><b>等待文件复制</b>：默认安装到 <code>%USERPROFILE%\DouyinWorkbench</code>，可用参数指定：
+        <pre><code>powershell -ExecutionPolicy Bypass -File .\install.ps1 -InstallDir "D:\DouyinWorkbench"</code></pre>
+      </li>
+      <li><b>浏览器步骤</b>：脚本会创建两个桌面快捷方式、独立浏览器配置目录、自动加载扩展；询问时按回车会打开两个浏览器让你登录。</li>
+      <li><b>完成</b>：脚本自动注册 DSH 侧栏插件（默认关闭）、把桥接服务加入开机启动、打开本教程。</li>
+    </ol>
+    <h3>安装脚本为你做了什么</h3>
+    <table>
+      <tr><th>项目</th><th>结果</th></tr>
+      <tr><td>程序文件</td><td>复制到安装目录：<code>scripts/</code>、<code>docs/</code>、<code>会话说明/</code>、<code>config/</code>、<code>data/</code>、<code>extensions/</code>、<code>tutorial.html</code></td></tr>
+      <tr><td>浏览器扩展</td><td><code>DSH Edge Bridge</code>（Edge）与 <code>DSH Chrome Bridge</code>（Chrome）随快捷方式自动加载，无需去扩展商店</td></tr>
+      <tr><td>独立浏览器配置</td><td><code>browser-profiles/edge-research</code> 与 <code>browser-profiles/chrome-ops</code>，与研究/运营登录态隔离</td></tr>
+      <tr><td>桥接服务</td><td>本机 127.0.0.1:8788（Edge）、8787（Chrome），加入 Windows 开机启动，日志在 <code>logs/</code></td></tr>
+      <tr><td>默认配置</td><td>空的对标账号库、业务档案模板、运行环境 <code>config/runtime.json</code></td></tr>
+      <tr><td>DSH 插件</td><td>在 <code>cordis.patch.yml</code> 追加五模块侧栏插件，默认关闭（见第 13 节启用）</td></tr>
+    </table>
+    <div class="warn"><b>Windows 提示“已保护你的电脑”？</b> 这是因为脚本未签名。点「更多信息」→「仍要运行」。脚本是明文 PowerShell，可先打开检查内容。</div>
+  </section>
+
+  <section id="login">
+    <h2>3. 两个浏览器与登录</h2>
+    <p>安装完成后桌面会有两个快捷方式。以后<b>只用这两个快捷方式开浏览器</b>，扩展和登录态才会带对。</p>
+    <div class="grid">
+      <div class="card">
+        <h3>研究浏览器（Edge 小号）</h3>
+        <p>用途：会话1 对标账号、会话2 参考视频、会话5 情报。</p>
+        <p>登录：抖音<b>研究小号</b>；打开 <code>https://www.douyin.com/user/self</code> 可看到账号名和抖音号。</p>
+        <p class="files">扩展：DSH Edge Bridge；桥接端口 8788</p>
+      </div>
+      <div class="card">
+        <h3>运营浏览器（Chrome 运营账号）</h3>
+        <p>用途：会话4 自有账号复盘。</p>
+        <p>登录：你们自己的<b>运营账号</b>；打开 <code>https://creator.douyin.com/</code> 查看后台。</p>
+        <p class="files">扩展：DSH Chrome Bridge；桥接端口 8787</p>
+      </div>
+    </div>
+    <h3>登录步骤</h3>
+    <ol class="steps">
+      <li>双击「研究浏览器（Edge 小号）」→ 扫码登录研究小号。</li>
+      <li>双击「运营浏览器（Chrome 运营账号）」→ 扫码登录运营账号。</li>
+      <li>验证扩展：Edge 地址栏输入 <code>edge://extensions</code>、Chrome 输入 <code>chrome://extensions</code>，应看到对应 Bridge 扩展已启用。</li>
+      <li>验证桥接（在安装目录执行，使用 DSH 自带 Python 或系统 Python）：
+<pre><code>python scripts\edge-bridge\client.py status
+python scripts\chrome-bridge\client.py status</code></pre>
+        返回 <code>connected=true</code> 即通。若失败见 FAQ。
+      </li>
+    </ol>
+    <div class="tip">登录检查同时是项目规则：会话1/2/5 只认研究小号；会话4 只认运营账号。账号不符时模块会停止并报 blocked，不会继续采集。</div>
+  </section>
+
+  <section id="chats">
+    <h2>4. 创建 5 个工作聊天</h2>
+    <p>在 DSH 里新建 <b>6 个工作聊天</b>：1 个总管 + 5 个模块。每个聊天打开同一个工作目录（安装目录）。</p>
+    <table>
+      <tr><th>聊天</th><th>启动说明文件</th><th>职责</th></tr>
+      <tr><td>总管（当前聊天）</td><td><code>AGENTS.md</code></td><td>需求确认、派工、验收、选片记录、结果汇报</td></tr>
+      <tr><td>会话1</td><td><code>会话说明/会话1-对标账号.md</code></td><td>Edge 查用户给的对标账号，出账号库与趋势报告</td></tr>
+      <tr><td>会话2</td><td><code>会话说明/会话2-参考视频.md</code></td><td>每轮 50 条参考视频，深拆，交接给会话3</td></tr>
+      <tr><td>会话3</td><td><code>会话说明/会话3-原创剧本.md</code></td><td>读交接，写可拍原创剧本</td></tr>
+      <tr><td>会话4</td><td><code>会话说明/会话4-自有账号复盘.md</code></td><td>Chrome 读运营账号数据，做深度复盘</td></tr>
+      <tr><td>会话5</td><td><code>会话说明/会话5-规则与增长情报.md</code></td><td>官方规则/功能/案例情报</td></tr>
+    </table>
+    <h3>怎么启动</h3>
+    <ol class="steps">
+      <li>打开 <code>会话说明/会话1-对标账号.md</code>，把「可直接发给该会话的启动指令」整段复制给会话1。</li>
+      <li>对会话2、3、4、5 重复同样操作，各自用对应文件。</li>
+      <li>总管聊天保持为当前聊天，负责汇总。</li>
+    </ol>
+    <div class="tip">每个聊天的完整历史不会自动互通；<b>共享工作目录里的文件才是交接依据</b>。所以务必让 6 个聊天都打开同一个安装目录。</div>
+    <div class="warn">不要让每个模块去猜别人的进度。报告、批次数据、交接文件都落在目录里，总管按文件验收。</div>
+  </section>
+
+  <section id="bench">
+    <h2>5. 给出你的对标账号</h2>
+    <p><b>对标账号由用户自己提供</b>，安装包不预置任何账号，也不会自动猜。</p>
+    <div class="grid">
+      <div class="card"><h3>方式 A（推荐）</h3><p>直接在总管或会话1 里发：账号名称、抖音号或主页链接（能附上大致粉丝量更好）。会话1 会用 Edge 打开原页核验身份，再写入账号库。</p></div>
+      <div class="card"><h3>方式 B</h3><p>编辑 <code>data/benchmarks.json</code>，把名称/抖音号/主页链接写进 <code>accounts</code> 数组；再让会话1 核验。</p></div>
+    </div>
+    <p>建议先给业务信息：主营细分（全屋定制/整装/设计/软装等）、服务城市、目标（同城获客/个人 IP/带货）。可以填在 <code>data/business_profile.json</code>，也可以直接告诉总管。</p>
+    <div class="tip">对标账号数量不限，但会话2 的 benchmark 配额是 20 条；用户没确认的候选不能被当作 confirmed。</div>
+  </section>
+
+  <section id="daily">
+    <h2>6. 每天怎么用</h2>
+    <h3>一轮完整流程</h3>
+    <ol class="steps">
+      <li><b>情报/对标更新（可选）</b>：会话5 出最新规则情报；会话1 更新对标账号的最新视频趋势与评论。</li>
+      <li><b>会话2 采参考</b>：每轮 50 条 = 跨行业热门15 + 对标账号20 + 家居家装15；非家居只看近72小时，家居/对标看六个自然月；评论优先。</li>
+      <li><b>用户选片</b>：你在 50 条里挑要做的；明确说“选 B02/B10、H04、S01 自选”等。总管用 <code>scripts/workspace.py select</code> 记录你的原话并生成不可静默改动的交接。</li>
+      <li><b>会话3 写剧本</b>：读交接写原创可拍稿；侧栏可点【调整剧本】填写要求继续改。</li>
+      <li><b>拍摄发布</b>：你们自己拍、自己发；发布后把作品 ID 补进 <code>scripts-output/&lt;批次&gt;/publication-map.json</code>。</li>
+      <li><b>会话4 复盘</b>：按发布后窗口拉数据，做深度复盘（结合对标/参考/情报），给下一轮实验建议。</li>
+      <li><b>回到第 2 步</b>继续下一轮。</li>
+    </ol>
+    <h3>如果启用了五模块工作台（见第 13 节）</h3>
+    <p>总管聊天右侧会出现【五模块工作台】卡片：查看每张卡的最新报告、点“查看报告”看 PPT 式报告；参考视频卡可【查看视频】【拆解】【做原创剧本】，剧本卡可【调整剧本】。</p>
+    <h3>文件去哪找</h3>
+    <table>
+      <tr><th>产物</th><th>位置</th></tr>
+      <tr><td>对标账号库与趋势报告</td><td><code>data/benchmarks.json</code>、<code>research/benchmarks/&lt;分析ID&gt;/</code></td></tr>
+      <tr><td>每轮 50 条参考视频</td><td><code>batches/&lt;批次ID&gt;/</code>（含 <code>quick-pick-vN.md</code>、<code>videos.json</code>）</td></tr>
+      <tr><td>深拆与豆包逐字稿</td><td><code>batches/&lt;批次ID&gt;/deep-dives/&lt;作品ID&gt;/revision-N/</code></td></tr>
+      <tr><td>原创剧本</td><td><code>scripts-output/&lt;批次ID&gt;/&lt;脚本目录&gt;/script-*.md</code></td></tr>
+      <tr><td>复盘</td><td><code>reviews/&lt;复盘ID&gt;/report.md</code></td></tr>
+      <tr><td>情报</td><td><code>research/platform-intelligence/&lt;研究ID&gt;/report.md</code></td></tr>
+    </table>
+  </section>
+
+  <section id="modules">
+    <h2>7. 五模块详解</h2>
+    <table>
+      <tr><th>模块</th><th>输入</th><th>核心产出</th><th>硬性要求</th></tr>
+      <tr><td>会话1 对标账号</td><td>用户给的对标账号名称/链接；上次分析截止</td><td>账号卡片（首页截图＋主页链接）、新增视频趋势、评论情况、分析报告</td><td>真实截图与链接；只读；登录研究小号；不重复会话2 的拆解</td></tr>
+      <tr><td>会话2 参考视频</td><td>已确认对标库；批次窗口</td><td>50 条候选表、总体分析、入选原因、批次报告；深拆时出逐字稿</td><td>15/20/15 配额；评论优先；非家居近72小时；豆包工作模式逐字稿；不替用户选片</td></tr>
+      <tr><td>会话3 原创剧本</td><td>用户确认的交接（selection/handoff）</td><td>具体剧本（分镜）、口播文案、标题备选、封面建议</td><td>不照搬原表达；未知价格/工期/效果不编；演示只展示四类内容</td></tr>
+      <tr><td>会话4 自有账号复盘</td><td>Chrome 已登录运营账号；脚本→作品映射</td><td>逐条作品诊断、对标/参考/情报三项对照、2-4 个实验</td><td>登录运营账号；区分统计口径；不做因果断言</td></tr>
+      <tr><td>会话5 情报</td><td>抖音官方/创作者中心/媒体来源</td><td>结论式标题＋每条来源链接＋顶部总体分析与建议</td><td>官方原文优先；公示≠生效；不装监测、不设定时</td></tr>
+    </table>
+    <div class="tip">总管（你当前聊天）只做需求确认、派工、验收和汇总，不亲自采集/写稿/复盘；有问题汇总后交回对应模块处理。</div>
+  </section>
+
+  <section id="rules">
+    <h2>8. 核心规则速查</h2>
+    <h3>参考视频 50 条</h3>
+    <ul>
+      <li>窗口：启动日前<b>六个自然月</b>；月底回退到目标月最后一天；不跨轮沿用旧截止日。</li>
+      <li>配额：<b>跨行业热门15 + 对标账号20 + 家居家装15 = 50</b>；同一作品 ID 只计一次。</li>
+      <li>排序：同类里<b>评论数优先、点赞数次之</b>，同条件近期优先。</li>
+      <li>非家居只取冻结的近 <b>72 小时</b>；美食/吃播不纳入。</li>
+      <li>不足 50 条就如实报缺口，不凑数、不扩窗。</li>
+      <li>候选报告版式保持原表格；顶部加总体分析；每条一句“入选原因（简短）”。</li>
+    </ul>
+    <h3>登录账号门禁</h3>
+    <ul>
+      <li>会话1/2/5：必须确认 Edge 登录的是<b>研究小号</b>；不符/未登录立即停止并报 blocked。</li>
+      <li>会话4：必须确认 Chrome 登录的是<b>运营账号</b>。</li>
+      <li>任何人不得复制 Cookie、读密码库；登录/扫码/验证码由本人完成。</li>
+    </ul>
+    <h3>所有拆解视频必须做逐字稿</h3>
+    <ol>
+      <li>打开豆包 → 点【新工作任务】→ 选【工作】（普通聊天打不开抖音链接）。</li>
+      <li>把公开链接和这段话一起发送：<br><code>请提取这个抖音视频的完整口播文案（逐字稿），不要只做摘要，尽量逐句输出，并标注听不清的地方：</code></li>
+      <li>保存原始逐字稿、meta（工作模式/对话URL/提示词/局限）和修订稿；把逐字稿纳入拆解卡片与分析。</li>
+      <li>没取得逐字稿 = 这条拆解不能标完成；不得用其他 AI 冒充、不得用旧摘要代替。</li>
+    </ol>
+    <h3>自选视频（用户直接给的链接）</h3>
+    <ul>
+      <li>由会话2 只读解析作品 ID，做完整深拆后追加到参考视频报告，分类=【自选】，编号 S01 起。</li>
+      <li>自选不计入 15/20/15 配额；与已有 50 条 ID 重复时不重复建卡。</li>
+    </ul>
+    <h3>做原创剧本 / 调整剧本</h3>
+    <ul>
+      <li><b>没拆解过</b>的视频：点【做原创剧本】会弹窗要求先拆解，不能跳过。</li>
+      <li><b>已拆解</b>：弹窗让你填写“本次做剧本要求”，随任务交给会话3（≤2000字）。</li>
+      <li>剧本演示只展示：具体剧本（分镜）、口播文案、标题备选、封面建议；标题从“一”开始编号。</li>
+      <li>演示底部【调整剧本】：填写调整要求，派给会话3 基于当前稿生成新版本（保留旧版，不覆盖）。</li>
+      <li>剧本默认是草稿；发布、投流等操作必须另行明确授权。</li>
+    </ul>
+    <h3>情报与复盘</h3>
+    <ul>
+      <li>情报：标题=结论、每条有来源链接、顶部放总体分析与建议；官方原文优先；公示/征求意见不等于已生效。</li>
+      <li>复盘：逐条作品诊断＋对标对照＋参考机制对照＋情报对照＋2-4 个可检验实验；不承诺流量或成交。</li>
+    </ul>
+    <p class="files">完整规则：<code>AGENTS.md</code>、<code>docs/</code>、<code>会话说明/</code>。</p>
+  </section>
+
+  <section id="commands">
+    <h2>9. 快捷命令</h2>
+    <h3>浏览器桥接</h3>
+    <pre><code># 查看连接状态（在安装目录执行）
+python scripts\edge-bridge\client.py status
+python scripts\chrome-bridge\client.py status
+
+# 打开新标签页 / 截图 / 读取文本
+python scripts\edge-bridge\client.py new-tab "https://www.douyin.com/"
+python scripts\edge-bridge\client.py shot 123 "research\shot.png"
+python scripts\edge-bridge\client.py eval 123 --js "document.title"
+
+# 手动启动/停止桥接服务
+powershell -ExecutionPolicy Bypass -File bin\start-bridges.ps1
+powershell -ExecutionPolicy Bypass -File bin\stop-bridges.ps1</code></pre>
+    <h3>批次工具</h3>
+    <pre><code>python scripts\workspace.py status
+python scripts\workspace.py new-batch
+python scripts\workspace.py validate &lt;批次ID&gt;
+python scripts\workspace.py select &lt;批次ID&gt; --ids 作品ID1 作品ID2 --confirmation "用户明确选择"
+python -m unittest discover -s tests -v   # 可选自检</code></pre>
+    <h3>查看日志</h3>
+    <p>桥接日志：<code>logs\edge-bridge.log</code>、<code>logs\chrome-bridge.log</code>。</p>
+    <div class="tip">如果 <code>python</code> 不在 PATH：打开 <code>config\runtime.json</code>，里面有 DSH 自带 Python 的完整路径，直接双击或用它运行。</div>
+  </section>
+
+  <section id="faq">
+    <h2>10. 常见问题</h2>
+    <details><summary>桥接 status 报 relay_unreachable / 连不上</summary>
+      <p>① 端口是否在听：<code>Get-NetTCPConnection -LocalPort 8788</code>；② 运行 <code>bin\start-bridges.ps1</code>；③ 看对应扩展是否启用、浏览器是否用桌面快捷方式打开的；④ 看 <code>logs\</code> 日志。</p>
+    </details>
+    <details><summary>浏览器里看不到 DSH Edge/Chrome Bridge 扩展</summary>
+      <p>确认是从桌面快捷方式启动的（快捷方式带 <code>--load-extension</code>）。若手动开了浏览器，关掉后用快捷方式重开。Edge 看 <code>edge://extensions</code>，Chrome 看 <code>chrome://extensions</code>。</p>
+    </details>
+    <details><summary>提示“未找到 Node.js / Python”</summary>
+      <p>安装并启动一次 DSH 桌面版，让它自带运行时落盘，然后重跑 <code>install.ps1</code>；或自行安装 Node 20+ / Python 3.10+ 后重跑。</p>
+    </details>
+    <details><summary>五模块工作台没有出现</summary>
+      <p>默认是关闭的，见第 13 节。需要先运行 <code>configure-sessions.ps1</code> 绑定会话，然后<b>完全重启 DSH</b>。不启用也不影响手动使用 5 个聊天。</p>
+    </details>
+    <details><summary>账号不符 / 提示重新登录</summary>
+      <p>会话1/2/5 只认研究小号，会话4 只认运营账号。请用对应浏览器扫码登录正确账号后重试；不要在同一浏览器里切换多个抖音号混用。</p>
+    </details>
+    <details><summary>豆包说打不开链接 / 只给摘要</summary>
+      <p>必须用豆包【新工作任务】→【工作】模式，普通聊天打不开抖音链接。把完整提示词和链接一起发送；仍失败就如实标 blocked，不要用其他 AI 冒充。</p>
+    </details>
+    <details><summary>Windows 拦截 install.ps1</summary>
+      <p>这是未签名脚本的 SmartScreen 提示：右键属性勾选“解除锁定”，或“更多信息→仍要运行”；也可在 PowerShell 里用 <code>Unblock-File</code>。</p>
+    </details>
+    <details><summary>数据放在哪里？会丢吗？</summary>
+      <p>所有业务数据在安装目录的 <code>batches/ research/ reviews/ scripts-output/ data/</code>。重装/升级只覆盖程序文件，这些目录建议定期备份。</p>
+    </details>
+  </section>
+
+  <section id="privacy">
+    <h2>11. 隐私与安全</h2>
+    <ul>
+      <li><b>不保存密码</b>：抖音登录完全由你本人在两个浏览器里扫码完成。</li>
+      <li><b>不读 Cookie/密码库</b>：桥接只通过浏览器扩展执行读取类命令，不读取凭据文件。</li>
+      <li><b>默认只读</b>：发布、删改内容、评论私信、关注、投流、支付等外部操作，必须另行明确授权。</li>
+      <li><b>数据在本地</b>：报告、截图、逐字稿都保存在安装目录；上传 GitHub 时切勿把 <code>batches/ research/ reviews/ data/</code> 一起提交。</li>
+      <li><b>逐字稿标注</b>：豆包提取属 AI 辅助整理、未经真人审核，交付必须保留标注。</li>
+    </ul>
+  </section>
+
+  <section id="structure">
+    <h2>12. 目录结构</h2>
+    <pre><code>DouyinWorkbench/
+├─ install.ps1                 一键安装
+├─ configure-sessions.ps1      可选：绑定 5 个会话，启用五模块工作台
+├─ tutorial.html               本教程
+├─ AGENTS.md                   所有会话必须遵守的总规则
+├─ 会话说明/                   5 个模块的启动说明
+├─ docs/                       细则（筛选/登录/逐字稿/报告/复盘/情报…）
+├─ config/                     工作区配置、运行环境、调度模板
+├─ data/                       业务档案、对标账号库（空模板）
+├─ scripts/
+│  ├─ edge-bridge/             Edge 桥接 relay + client + extension
+│  ├─ chrome-bridge/           Chrome 桥接 relay + client
+│  ├─ browser_bridge/          Chrome 桥接兼容客户端
+│  ├─ session-dispatch/        五会话调度插件
+│  ├─ sidebar-dashboard/       五模块侧栏与报告渲染插件
+│  └─ workspace.py             批次建档/验收/选片工具
+├─ extensions/                 Edge/Chrome 扩展（安装脚本自动加载）
+├─ bin/                        启动/停止桥接
+├─ batches/ research/ reviews/ scripts-output/ handoffs/ control/   运行数据
+├─ browser-profiles/           两个浏览器的独立配置（登录态）
+└─ logs/                       桥接日志</code></pre>
+  </section>
+
+  <section id="advanced">
+    <h2>13. 进阶：启用五模块工作台（可选）</h2>
+    <p>工作台能把五张卡片、报告阅读、拆解/做剧本/调整剧本按钮直接放进 DSH 总管聊天右侧。它需要把 5 个 DSH 会话 ID 绑定到本机配置。</p>
+    <h3>前提</h3>
+    <ol>
+      <li>已按第 4 节创建 6 个聊天。</li>
+      <li>能拿到每个聊天的会话 ID（<code>session-</code> 开头）。通常在聊天的会话信息/设置里可以复制；如果找不到，先跳过本节，手动模式完全可用。</li>
+    </ol>
+    <h3>步骤</h3>
+    <ol class="steps">
+      <li>在安装目录运行：
+        <pre><code>powershell -ExecutionPolicy Bypass -File .\configure-sessions.ps1</code></pre>
+      </li>
+      <li>按提示依次粘贴：总管、会话1、会话2、会话3、会话4、会话5 的会话 ID。留空则放弃。</li>
+      <li>脚本会生成 <code>config/session-dispatch-v3.json</code> 并启用插件。</li>
+      <li><b>完全退出并重新启动 DSH</b>（不是刷新页面）。</li>
+      <li>打开总管聊天，右侧应出现【五模块工作台】卡片。</li>
+    </ol>
+    <div class="warn">绑定错误会导致派工发错聊天。不确定 ID 时不要绑定；工作台显示异常时改回 <code>disabled: true</code> 或重跑安装脚本即可。</div>
+  </section>
+
+  <section id="upgrade">
+    <h2>14. 升级与卸载</h2>
+    <h3>升级</h3>
+    <ol>
+      <li>下载新版 ZIP，解压到新目录。</li>
+      <li>先把旧安装目录里的 <code>batches/ research/ reviews/ scripts-output/ data/</code> 复制出来备份。</li>
+      <li>关闭 DSH，运行新版 <code>install.ps1</code>，安装到同一目录（脚本不会删除业务数据）。</li>
+      <li>重新启动 DSH；如绑定过会话，重跑一次 <code>configure-sessions.ps1</code>。</li>
+    </ol>
+    <h3>卸载</h3>
+    <ol>
+      <li>删除桌面两个浏览器快捷方式、启动项里的「抖音工作台桥接服务」。</li>
+      <li>在 DSH 的 <code>cordis.patch.yml</code> 删除 <code>douyin-workbench</code> 那段 insert。</li>
+      <li>删除安装目录。如需彻底清登录态，删除 <code>browser-profiles/</code>（会退出两个抖音账号）。</li>
+    </ol>
+    <div class="good">建议每轮批次结束后备份一次 <code>batches/</code> 和 <code>data/</code>；这些是项目最值钱的资产。</div>
+  </section>
+
+  <footer>抖音五模块工作台 · 家居家装行业版 · 本教程可离线打开，直接发给同事即可。</footer>
+</div>
+</body>
+</html>

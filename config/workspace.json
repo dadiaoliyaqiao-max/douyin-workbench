@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "workspace_name": "家居家装抖音选题与复盘",
+  "timezone": "Asia/Shanghai",
+  "window_calendar_months": 6,
+  "quotas": {
+    "cross_industry": 15,
+    "benchmark": 20,
+    "home": 15
+  },
+  "ranking": ["comments_desc", "likes_desc", "published_at_desc"],
+  "search_recency_order_days": [30, 90],
+  "comment_sampling": {
+    "target_visible_comments": 30,
+    "target_is_not_a_guarantee": true,
+    "exclude_emoji_dominated_high_like": true,
+    "paid_promotion_is_not_proven_by_this_rule": true
+  },
+  "browser_routing": {
+    "benchmark_research": "Edge",
+    "reference_research": "Edge",
+    "owned_account_review": "Chrome"
+  },
+  "automation_scope": ["batch_initialization", "structural_validation", "confirmed_selection_handoff", "approved_independent_session_dispatch"],
+  "independent_session_dispatch_implemented": true,
+  "independent_session_dispatch_live_verified": true,
+  "browser_capture_implemented": false,
+  "independent_chat_history_access_implemented": false,
+  "publishing_authorized": false
+}
